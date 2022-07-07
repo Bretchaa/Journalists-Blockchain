@@ -17,7 +17,7 @@ def capital_handle(journalists)
 end
 
 def alphabetical_array(journalists)
-    puts "La liste est maintenant dans l'ordre alphabétique : #{journalists.sort}"
+    puts "La liste est maintenant dans l'ordre alphabétique : #{journalists.sort_by(&:downcase)}"
 end
 
 def short_to_long_array(journalists)

@@ -15,5 +15,36 @@ def crypto_low(crypto)
  puts "La crypto avec le plus basse prix est :#{crypto.select {|x,y| y == prices.min}}"
 end
 
+def under6(crypto)
+  puts "#{crypto.select{|k,v| v < 6000 }}"
+end
+def expan_under_6(crypto)
+puts crypto.select { |k,v| v < 6000 }.max_by{ |k,v| v }
+end
 
+puts "Bienvenue dans notre programme de crypto tradding"
+puts "Que voulez-vous faire ?"
+puts "1_ Voir la ou les crypto avec la plus grosse valeur ?"
+puts "2_ Voir la ou les crypto avec la plus petite valeur ?"
+puts "3_ Voir les cryptos en dessous de 6000 ?"
+puts "4_ Voir la crypto la plus chère mais inférieur à 6000 ?"
+puts ""
+print "Entrez un numéro :"
+input = gets.to_i
 
+while input<=0 or input>4
+  puts "ERREUR"
+  print "Entrez un numéro :"
+  input = gets.to_i
+end
+
+if input == 1
+  crypto_higt(crypto)
+elsif input == 2
+  crypto_low(crypto)
+elsif input ==3
+  under6(crypto)
+elsif input == 4
+  expan_under_6(crypto)
+end
+  

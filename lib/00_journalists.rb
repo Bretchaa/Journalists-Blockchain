@@ -3,8 +3,11 @@ journalists = ["@jcunniet","@PaulLampon","@Aziliz31","@ssoumier","@marionsouzeau
  
 puts "il y a #{journalists.length} handle dans cette array"
 puts "Le handle avec le moins de caractères est #{journalists.min {|a,b| a.length <=> b.length}}"
-puts "Le nombre de handle avec 5 caractères est #{journalists.count {|x| x.length == 6}}"
-puts 
+puts "Le nombre de handles avec 5 caractères est #{journalists.count {|x| x.length == 6}}"
+puts "Le nombre de handles caractères qui commencent par une majuscule est : #{journalists.count {|x| x[1].match?( /[[:upper:]]/) } } "
+puts "La liste est maintenant dans l'ordre alphabétique : #{journalists.sort}"
+puts "La liste est maintenant trié du handle le plus court au plus long: #{journalists.sort_by {|x| x.length}}"
+
 
 
 
